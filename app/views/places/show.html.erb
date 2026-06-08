@@ -12,6 +12,10 @@
   <% for entry in @entries %>
     <div class="col-md-4 mb-4">
       <div class="card">
+      <% if entry.image.attached? %>
+  <%= image_tag entry.image, class: "card-img-top" %>
+<% end %>
+
         <div class="card-body">
           <h5 class="card-title"><%= entry["title"] %></h5>
 

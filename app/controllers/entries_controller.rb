@@ -13,6 +13,10 @@ class EntriesController < ApplicationController
 
     entry["user_id"] = @current_user["id"]
 
+    if params["image"].present?
+  entry.image.attach(params["image"])
+end
+
     entry.save
 
     redirect_to "/places/#{entry["place_id"]}"

@@ -1,6 +1,6 @@
 <h1>New Entry for <%= @place["name"] %></h1>
 
-<form action="/entries" method="post">
+<form action="/entries" method="post" enctype="multipart/form-data">
   <input type="hidden" name="place_id" value="<%= @place["id"] %>">
 
   <div class="mb-3">
@@ -17,6 +17,11 @@
     <label class="form-label">Occurred On</label>
     <input type="date" name="occurred_on" class="form-control">
   </div>
+
+  <div class="mb-3">
+  <label class="form-label">Image</label>
+  <input type="file" name="image" class="form-control">
+</div>
 
   <button class="btn btn-primary">Create Entry</button>
 </form>
