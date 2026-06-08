@@ -1,7 +1,12 @@
 Rails.application.routes.draw do
-  get("/", { :controller => "places", :action => "index" })
-  resources "entries"
   resources "places"
-  resources "sessions"
+  resources "entries"
   resources "users"
+  resources "sessions"
+
+  get "/signup", to: "users#new"
+  get "/login", to: "sessions#new"
+  get "/logout", to: "sessions#destroy"
+
+  get "/", to: "places#index"
 end
