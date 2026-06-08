@@ -20,3 +20,5 @@ group :development do
   gem "web-console"
 end
 
+
+gem "pg", "~> 1.6"
